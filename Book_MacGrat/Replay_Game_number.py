@@ -203,3 +203,34 @@ while flag:
         flag=False
 '''
 
+# Еще раз 28.02.2026 года.
+'''''''''
+import random
+
+number = random.randint(1,10)
+flag = True
+value = 0
+
+print('Введите значение от 1 до 10 -->  ', end=' ')
+
+while flag:
+    value = input()
+
+    if not value.isdigit():
+        print('Ошибка.Не числовое значение.Попробуйте еще раз --> ', end=' ')
+        continue
+    
+    valueInt = int(value)
+
+    if valueInt < 1 or valueInt > 10:
+        print('Введенное значение Вне диапазона.Попробуй еще раз --> ', end=' ')
+        continue
+
+    if valueInt < number:
+        print('Слишком мало.Попробуй еще --> ', end=' ')
+    elif valueInt > number:
+        print('Слишком много.Попробуй еще --> ', end=' ')
+    else:
+        print('Отличная работа.Число ', number,'классно отработано.')
+'''
+
