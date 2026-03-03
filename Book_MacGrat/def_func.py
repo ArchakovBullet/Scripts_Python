@@ -19,14 +19,14 @@
 
 
 #  Мой пример:
-def whoayou(name, town):
-    print('Это ', name, '\nОн из города ', town)
+# def whoayou(name, town):
+#     print('Это ', name, '\nОн из города ', town)
 
 
-my_name = input('Введите имя ')
-my_town = input ( 'Введите город ')
+# my_name = input('Введите имя ')
+# my_town = input ( 'Введите город ')
 
-whoayou (my_name, my_town)
+# whoayou (my_name, my_town)
 
 # Пример Алиса_1  Функция с одним параметром
 # def greet(name):
@@ -94,4 +94,10 @@ whoayou (my_name, my_town)
 # Дополнительные позиционные аргументы: ('доп1', 'доп2')
 # Именованные аргументы: {'name': 'Алексей', 'age': 30}
 
+# Как я понимаю функцию
+# def known (value_1 = 10, value_2 = 55, value_3 = 100):
+#     print(value_1, value_2, value_3)
 
+# known()
+# known(22, 15)
+# known(12, 70, 120) # Определенно мне пока что это понятно !!!
