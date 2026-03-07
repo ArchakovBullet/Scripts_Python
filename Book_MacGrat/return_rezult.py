@@ -1,24 +1,24 @@
-def add_sum(a,b):
-    c= a+b
-    return c
+# def add_sum(a,b):
+#     c= a+b
+#     return c
 
 
-try:
-    value1=int (input ('Введите первое значение --> ')) 
-    value2=input('Введите второе значение --> ')
-    rezult = add_sum(value1,int (value2))
-    print(rezult)
-except ValueError:
-    print('Ошибка.Введите целое число.')
+# try:
+#     value1=int (input ('Введите первое значение --> ')) 
+#     value2=input('Введите второе значение --> ')
+#     rezult = add_sum(value1,int (value2))
+#     print(rezult)
+# except ValueError:
+#     print('Ошибка.Введите целое число.')
 
 # # Пример прерывания функции.
-# def summe(x, y):
-#     if x < 6:
-#         return
-#     return x*y
+def summe(x, y):
+    if x < 3:
+        return
+    return x*y
 
-# rez = summe(5, 6)
-# print('\n',rez)
+rez = summe(5, 6)
+print('\n',rez)
 
 # Пример:
 # def squared (num: str):
