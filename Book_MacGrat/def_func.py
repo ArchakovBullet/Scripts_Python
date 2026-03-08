@@ -38,12 +38,12 @@
 
 
 #  Пример Алиса_2 Функция с несколькими параметрами
-# def calculate_area(length, width):
-#     area = length * width
-#     return area
+def calculate_area(length, width):
+    area = length * width
+    return area
 
-# rezult =  calculate_area(5, 3)
-# print(f'Площадь прямоугольника = {rezult}')
+rezult =  calculate_area(5, 3)
+print(f'Площадь прямоугольника = {rezult}')
 
 #  Функция с параметрами по умолчанию
 # def send_email(to, subject = 'Без темы', boby = 'Пустое сообщение'):
