@@ -16,7 +16,6 @@ def summe(x, y):
     if x < 3:
         return
     return x*y
-
 rez = summe(5, 6)
 print('\n',rez)
 
