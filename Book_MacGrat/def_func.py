@@ -38,12 +38,12 @@
 
 
 #  Пример Алиса_2 Функция с несколькими параметрами
-def calculate_area(length, width):
-    area = length * width
-    return area
+# def calculate_area(length, width):
+#     area = length * width
+#     return area
 
-rezult =  calculate_area(5, 3)
-print(f'Площадь прямоугольника = {rezult}')
+# rezult =  calculate_area(5, 3)
+# print(f'Площадь прямоугольника = {rezult}')
 
 #  Функция с параметрами по умолчанию
 # def send_email(to, subject = 'Без темы', boby = 'Пустое сообщение'):
@@ -95,9 +95,9 @@ print(f'Площадь прямоугольника = {rezult}')
 # Именованные аргументы: {'name': 'Алексей', 'age': 30}
 
 # Как я понимаю функцию
-# def known (value_1 = 10, value_2 = 55, value_3 = 100):
-#     print(value_1, value_2, value_3)
+def known (value_1 = 10, value_2 = 55, value_3 = 100):
+    print(value_1, value_2, value_3)
 
-# known()
-# known(22, 15)
-# known(12, 70, 120) # Определенно мне пока что это понятно !!!
+known()
+known(22, 15)
+known(12, 70, 120) # Определенно мне пока что это понятно !!!
