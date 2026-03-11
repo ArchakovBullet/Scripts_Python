@@ -1,23 +1,23 @@
 # Сортировка с копированием.(стр. 88)
-# def copy_sort(arraylen):
-#     copy = arraylen[:]
-#     sorted_copy= []
+def copy_sort(arraylen):
+    copy = arraylen[:]
+    sorted_copy= []
 
-#     while len(copy) > 0:
-#         minimum = 0
-#         for element in range(1, len(copy)):
-#             if copy[element] < copy[minimum]:
-#                 minimum = element
-#         print('\tУдаляем ', copy[minimum], 'Из', copy)
-#         sorted_copy.append(copy.pop(minimum))
+    while len(copy) > 0:
+        minimum = 0
+        for element in range(1, len(copy)):
+            if copy[element] < copy[minimum]:
+                minimum = element
+        print('\tУдаляем ', copy[minimum], 'Из', copy)
+        sorted_copy.append(copy.pop(minimum))
     
-#     return sorted_copy
+    return sorted_copy
 
-# array = [5,3,1,2,6,4]
-# print('Сортировка с копированием ....\nМассив: ', array)
+array = [5,3,1,2,6,4]
+print('Сортировка с копированием ....\nМассив: ', array)
 
-# print('Копия:', copy_sort(array))
-# print('Массив:', array)
+print('Копия:', copy_sort(array))
+print('Массив:', array)
 
 
 # В Python есть несколько встроенных методов сортировки, которые работают похожим образом:
