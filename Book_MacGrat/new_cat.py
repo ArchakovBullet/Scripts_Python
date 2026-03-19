@@ -1,4 +1,4 @@
-# Взаимосвязь с cat.py
+# Взаимосвязь с модулем cat.py
 import cat
 
 cat.purr()
