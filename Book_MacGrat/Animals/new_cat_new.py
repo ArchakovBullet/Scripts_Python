@@ -1,5 +1,5 @@
 # Взаимосвязь с модулем cat
-import cat
+import Book_MacGrat.Animals.cat as cat
 
 pet = input('Введите имя животного --> ')
 

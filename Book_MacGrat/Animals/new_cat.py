@@ -1,5 +1,5 @@
 # Взаимосвязь с модулем cat.py
-import cat
+import Book_MacGrat.Animals.cat as cat
 
 cat.purr()
 cat.lick()

@@ -1,4 +1,4 @@
-from dog import*
+from Book_MacGrat.Animals.dog import*
 
 pet = input('Введите имя питомца -->  ')
 
