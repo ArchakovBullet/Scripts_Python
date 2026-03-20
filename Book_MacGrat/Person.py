@@ -6,5 +6,6 @@ class Person:
         self.name = name
     
     def speak(self, msg ='Вызов базового класса'):
+        '''Метод speak базового класса'''
         print(self.name, msg)
         
