@@ -1,4 +1,4 @@
-from Person import*
+from Book_MacGrat.Person_MAN_HOMBRE.Person import*
 
 class Man(Person):
     '''Производный класс, определяющий особенности класса Man'''
