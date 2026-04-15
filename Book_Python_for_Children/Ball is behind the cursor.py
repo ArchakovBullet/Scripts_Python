@@ -12,14 +12,20 @@ pg.init()
 os.environ['SDL_VIDEO_WINDOW_POS'] = " 2480,240 "
 
 # Размер окошка:
-# screen = pg.display.set_mode((800, 600))
+screen = pg.display.set_mode((800, 600))
 
 # Если есть желание открыть монитор в полноэкранном режиме,
 # но для выхода из программы нужно сделать обработку.Ниже смотри: Выход при нажатии на Escape.
-screen = pg.display.set_mode((0, 0), pg.FULLSCREEN, display=1)
+# screen = pg.display.set_mode((0, 0), pg.FULLSCREEN, display=1)
 
 # надпись на окошке слева вверху:
 pg.display.set_caption('Лети к курсору')
+
+print("\n" + "#" * 50)
+print("#" * 50 + '\n')
+print("Для выхода из игры нажмите Escape.")
+print('\n' + "#" * 50)
+print("#" * 50)
 
 #  начальные координаты объекта(шарика) в окошке при запуске.
 x,y= 400,300
@@ -30,23 +36,24 @@ color = (255,0,0) # цвет красный. Если зеленый то: (0, 2
 
 clock = pg.time.Clock()  # альтернатива  pg.time.delay(10) 
 
-
-while True:
-    for event in pg.event.get():
-        if event.type == pg.QUIT: 
+# По сути, это ДВИЖОК ПРОГРАММЫ.
+while True: # Бесконечный игровой цикл. 
+    for event in pg.event.get():  # Получаем накопившиеся события.
+        if event.type == pg.QUIT: # Нажал на крестик ?
+            pg.quit()
             sys.exit()
         elif event.type == pg.KEYDOWN: # Обрабатываем нажатие клавиш
             if event.key == pg.K_ESCAPE: # ESCAPE
                 pg.quit()
                 sys.exit()
-        elif event.type == pg.MOUSEBUTTONDOWN: ###
-            x,y = pg.mouse.get_pos()  
+        elif event.type == pg.MOUSEBUTTONDOWN: # Нажал кнопку мыши ?
+            x,y = pg.mouse.get_pos()  # Получаем координаты мыши.
 
-    screen.fill((0,0,0))  
+    screen.fill((0,0,0))   # Закрашивает экран черным цветом
 
     keys = pg.key.get_pressed()
-    if keys[pg.K_SPACE]: 
-        screen.fill((0,0,255))
+    if keys[pg.K_SPACE]: # Если нажал на пробел,
+        screen.fill((0,0,255))  # то, окно станет синим.
 
     if keys[pg.K_KP_PLUS]: 
         size = 100
