@@ -16,7 +16,8 @@ pg.display.set_caption('Полет к курсору')
 
 
 print('\n' +'#' * 50)
-print('Для выхода из игры нажмите Escape\nлибо нажмите крестик.')
+print('Для выхода из игры нажмите Escape\nлибо нажмите крестик.\n')
+print('Для очистки от следов левый Ctrl')
 print('\n' +'#' * 50)
 
 x,y = 400,300
@@ -48,6 +49,8 @@ black = (0,0,0)
 
 last_printed_state = None # 'alt', 'space', или None
 
+clock = pg.time.Clock()
+
 # Чтобы окошко закрывалось не сразу.
 while True:
     for event in pg.event.get():
@@ -60,7 +63,6 @@ while True:
                 sys.exit()
         elif event.type == pg.MOUSEBUTTONDOWN:
             x,y = pg.mouse.get_pos()
-            # color = red_color
 
     
     # screen.fill((0,0,0))
@@ -68,23 +70,28 @@ while True:
     keys = pg.key.get_pressed()
     mods = pg.key.get_mods()
 
-    if mods & pg.KMOD_ALT:
-        screen.fill(orange_color)
-        current_state = 'alt'
-    elif keys[pg.K_SPACE]:
-        screen.fill(blue_color)
-        current_state = 'space' 
-    else:
-        screen.fill(black)
-        current_state = None
+
+    # if mods & pg.KMOD_ALT:
+    #     screen.fill(orange_color)
+    #     current_state = 'alt'
+    # elif keys[pg.K_SPACE]:
+    #     screen.fill(blue_color)
+    #     current_state = 'space' 
+    # else:
+    #     screen.fill(black)
+    #     current_state = None
         
-    if current_state != last_printed_state:
-        if current_state == 'alt':
-            print('Alt зажата')
-        elif current_state == 'space':
-            print('Зажат пробел')
+    # if current_state != last_printed_state:
+    #     if current_state == 'alt':
+    #         print('Alt зажата')
+    #     elif current_state == 'space':
+    #         print('Зажат пробел')
     
-        last_printed_state = current_state
+    #     last_printed_state = current_state
+
+
+    if mods & pg.KMOD_CTRL: # Очищаем от следов.
+        screen.fill(black)
 
     if keys[pg.K_1]:
         color = chocolate
@@ -94,7 +101,6 @@ while True:
         color = purple_color
 
     control = size > 15 and size < 100
-
     if control:
         if keys[pg.K_KP_PLUS]:
             size += 1
@@ -103,13 +109,13 @@ while True:
             size -=1
     else:
         size = 60
-        color = sky_blue
+        # color = sky_blue
 
 
 
     pg.draw.circle(screen, color, (x,y), size)
     pg.display.flip()
-    pg.time.delay(10)
+    clock.tick(60)
         
 
 
