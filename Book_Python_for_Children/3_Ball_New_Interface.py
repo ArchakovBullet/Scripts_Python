@@ -11,6 +11,8 @@ pg.display.set_caption('Взлетаем к курсору')
 
 print('\n' +'#' * 50)
 print('Для выхода из игры нажмите Escape\nлибо нажмите крестик.\nSpace для очистки от следов')
+print('\n1,2,3 - выбор цвета\n')
+print('Левая кнопка мыши - кисть Круг\nПравая кнопка мыши - кисть Квадрат\n"+"NumPad "-" - увеличение/уменьшение размера')
 print('\n' +'#' * 50)
 
 # Небесно-голубой
@@ -55,6 +57,8 @@ font = pg.font.SysFont(None, 24)           # любой системный
 
 clock = pg.time.Clock()
 
+draw_circle = True
+
 while True:
     for event in pg.event.get():
         if event.type == pg.QUIT:
@@ -64,9 +68,21 @@ while True:
             if event.key == pg.K_ESCAPE:
                 pg.quit()
                 sys.exit()
+            # elif event.key == pg.K_c:   # клавиша для переключения
+            #     draw_circle = not draw_circle   # Переключаем режим
+            #     print('Режим: ', 'Круг' if draw_circle else 'Квадрат')
         elif event.type == pg.MOUSEBUTTONDOWN:
             x,y = pg.mouse.get_pos()
-            pg.draw.circle(screen, color, (x,y), size)
+            # if draw_circle:
+            #     pg.draw.circle(screen, color, (x,y), size)
+            # else:
+            #     rect = pg.Rect(x- size//2, y-size//2, size, size)
+            #     pg.draw.rect(screen, color, rect)
+            if event.button == 1: # левая кнопка мыши - круг
+                pg.draw.circle(screen, color, (x,y), size)
+            elif event.button == 3: # правая кнопка мыши - квадрат
+                rect = pg.Rect(x- size//2, y-size//2, size, size)
+                pg.draw.rect(screen, color, rect)
 
     keys = pg.key.get_pressed()
     mods = pg.key.get_mods()
