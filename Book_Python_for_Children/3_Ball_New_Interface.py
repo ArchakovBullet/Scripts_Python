@@ -14,6 +14,7 @@ print('\n' +'#' * 50)
 print('Для выхода из игры нажмите Escape\nлибо нажмите крестик.\nSpace для очистки от следов')
 print('\n1,2,3 - выбор цвета\n')
 print('Левая кнопка мыши - кисть Круг\nПравая кнопка мыши - кисть Квадрат\n"+"NumPad "-" - увеличение/уменьшение размера')
+print('r - красный цвет шарика\ng - зеленый цвет шарика\nb - синий цвет шарика')
 print('\n' +'#' * 50)
 
 # Небесно-голубой
@@ -92,13 +93,23 @@ while True:
     if keys[pg.K_2]: color = lemon
     if keys[pg.K_3]: color = green_color
 
+    if keys[pg.K_r]:
+        color = red_color
+    elif keys[pg.K_g]:
+        color = green_color
+    elif keys[pg.K_b]:
+        color = blue_color
+
     if keys[pg.K_SPACE]: screen.fill(black)
 
+
+# Было так:
     # if 15 < size < 100:
-    #     if keys[pg.K_KP_MINUS]: size -= 1
-    #     elif keys[pg.K_KP_PLUS]: size += 1
+        # if keys[pg.K_KP_MINUS]: size -= 1
+        # elif keys[pg.K_KP_PLUS]: size += 1
     # else: size = 60
 
+# Стало так:
     if keys[pg.K_KP_MINUS] and size > 10:
         size -= 1
     if keys[pg.K_KP_PLUS] and size < 60:
