@@ -1,6 +1,7 @@
 '''''''Новый интерфейс старого кода(стр.50) - 01.05.2026'''''''
 
-import pygame as pg, sys
+import pygame as pg 
+import sys
 import os
 
 pg.init()
@@ -38,7 +39,7 @@ purple_color = (128, 0, 128)
 black = (0,0,0)
 
 x,y = 400,300
-size = 60
+size = 50
 color = cherry
 
 font = pg.font.SysFont('Arial', 24) # шрифт для надписи Размер.
@@ -93,10 +94,15 @@ while True:
 
     if keys[pg.K_SPACE]: screen.fill(black)
 
-    if 15 < size < 100:
-        if keys[pg.K_KP_MINUS]: size -= 1
-        elif keys[pg.K_KP_PLUS]: size += 1
-    else: size = 60
+    # if 15 < size < 100:
+    #     if keys[pg.K_KP_MINUS]: size -= 1
+    #     elif keys[pg.K_KP_PLUS]: size += 1
+    # else: size = 60
+
+    if keys[pg.K_KP_MINUS] and size > 10:
+        size -= 1
+    if keys[pg.K_KP_PLUS] and size < 60:
+        size += 1
 
     pg.draw.rect(screen, (50,50,50), (0,550,800, 50))
     pg.draw.circle(screen,color, (50,575), 15)
