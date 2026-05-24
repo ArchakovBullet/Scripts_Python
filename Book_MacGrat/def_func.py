@@ -19,22 +19,22 @@
 
 
 #  Мой пример:
-# def whoayou(name, town):
-#     print('Это ', name, '\nОн из города ', town)
+def whoayou(name, town):
+    print('Это ', name, '\nОн из города ', town)
 
 
-# my_name = input('Введите имя ')
-# my_town = input ( 'Введите город ')
+my_name = input('Введите имя ')
+my_town = input ( 'Введите город ')
 
-# whoayou (my_name, my_town)
+whoayou (my_name, my_town)
 
 # Пример Алиса_1  Функция с одним параметром
-def greet(name):
-    print(f"Привет, {name}!")
+# def greet(name):
+#     print(f"Привет, {name}!")
 
-# Вызов функции
-greet("Анна")  # Вывод: Привет, Анна!
-greet("Иван")  # Вывод: Привет, Иван!
+# # Вызов функции
+# greet("Анна")  # Вывод: Привет, Анна!
+# greet("Иван")  # Вывод: Привет, Иван!
 
 
 #  Пример Алиса_2 Функция с несколькими параметрами
