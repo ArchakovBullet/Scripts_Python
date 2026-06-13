@@ -72,7 +72,7 @@ def handle_color_change(keys, colors):
 def handle_size_change(keys, current_size):
     if keys[pg.K_KP_MINUS] and current_size > 10:
         current_size -= 1
-    if keys[pg.K_KP_PLUS] and current_size < 60:
+    if keys[pg.K_KP_PLUS] and current_size < 90:
         current_size += 1
     return current_size
 
